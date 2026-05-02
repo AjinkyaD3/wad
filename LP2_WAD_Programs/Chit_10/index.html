@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Registration Form</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f3f4f6; padding: 20px; }
+        .form-card { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .row { display: flex; gap: 20px; margin-bottom: 15px; }
+        .field { flex: 1; display: flex; flex-direction: column; }
+        label { font-weight: 600; margin-bottom: 5px; font-size: 0.9rem; color: #374151; }
+        input, select, textarea { padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; }
+        .radio-group, .check-group { display: flex; gap: 15px; margin-top: 5px; }
+        .radio-group label, .check-group label { font-weight: 400; }
+        button { background: #059669; color: white; border: none; padding: 12px; border-radius: 6px; width: 100%; cursor: pointer; font-size: 1rem; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="form-card">
+        <h2>User Registration Form</h2>
+        <form>
+            <div class="field">
+                <label>Name</label>
+                <input type="text" placeholder="Full Name" required>
+            </div>
+            <br>
+            <div class="field">
+                <label>Password</label>
+                <input type="password" placeholder="Password" required>
+            </div>
+            <br>
+            <div class="field">
+                <label>E-mail ID</label>
+                <input type="email" placeholder="name@domain.com" required>
+            </div>
+            <br>
+            <div class="row">
+                <div class="field" style="flex: 0.3;">
+                    <label>Code</label>
+                    <select>
+                        <option>+91 (IN)</option>
+                        <option>+1 (US)</option>
+                        <option>+44 (UK)</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Phone Number</label>
+                    <input type="text" placeholder="10 digits" pattern="\d{10}" required>
+                </div>
+            </div>
+            <br>
+            <div class="field">
+                <label>Sex</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="sex" value="male"> Male</label>
+                    <label><input type="radio" name="sex" value="female"> Female</label>
+                </div>
+            </div>
+            <br>
+            <div class="field">
+                <label>Date of Birth</label>
+                <div class="row" style="gap: 10px;">
+                    <select id="day"></select>
+                    <select id="month"></select>
+                    <select id="year"></select>
+                </div>
+            </div>
+            <br>
+            <div class="field">
+                <label>Languages Known</label>
+                <div class="check-group">
+                    <label><input type="checkbox"> English</label>
+                    <label><input type="checkbox"> Marathi</label>
+                    <label><input type="checkbox"> Hindi</label>
+                    <label><input type="checkbox"> Tamil</label>
+                </div>
+            </div>
+            <br>
+            <div class="field">
+                <label>Address</label>
+                <textarea rows="4" placeholder="Full Address"></textarea>
+            </div>
+
+            <button type="submit">Register Now</button>
+        </form>
+    </div>
+
+    <script>
+        // Populate DOB selects
+        const day = document.getElementById('day');
+        const month = document.getElementById('month');
+        const year = document.getElementById('year');
+
+        for(let i=1; i<=31; i++) day.innerHTML += `<option>${i}</option>`;
+        const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+        months.forEach((m, i) => month.innerHTML += `<option value="${i+1}">${m}</option>`);
+        for(let i=2024; i>=1950; i--) year.innerHTML += `<option>${i}</option>`;
+    </script>
+</body>
+</html>

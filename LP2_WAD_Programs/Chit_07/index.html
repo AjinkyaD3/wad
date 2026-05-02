@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Login Validation</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0f172a; color: white; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .login-card { background: #1e293b; padding: 2.5rem; border-radius: 1rem; width: 400px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+        h2 { text-align: center; margin-bottom: 2rem; }
+        .input-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-size: 0.875rem; color: #94a3b8; }
+        input { width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid #334155; background: #0f172a; color: white; box-sizing: border-box; }
+        .error { color: #f87171; font-size: 0.75rem; margin-top: 0.5rem; display: none; line-height: 1.4; }
+        button { width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: none; background: #3b82f6; color: white; font-weight: 600; cursor: pointer; }
+        button:hover { background: #2563eb; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h2>Secure Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Complexity required">
+                <div id="userError" class="error">
+                    Must have: 8+ chars, 1 Block, 1 Small, 1 Special, 1 Number.
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Complexity required">
+                <div id="passError" class="error">
+                    Must have: 8+ chars, 1 Block, 1 Special.
+                </div>
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

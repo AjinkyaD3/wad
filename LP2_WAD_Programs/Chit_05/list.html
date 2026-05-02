@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Users List</title>
+    <style>
+        body { font-family: system-ui; padding: 40px; background: #f0f4f8; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #6366f1; color: white; }
+        .nav { margin-bottom: 20px; }
+        a { color: #6366f1; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="nav"><a href="index.html">← Back to Form</a></div>
+    <h2>Data from Local Storage</h2>
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        const users = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
+        const tbody = document.querySelector('#userTable tbody');
+        users.forEach(user => {
+            const row = `<tr><td>${user.name}</td><td>${user.email}</td><td>${user.city}</td></tr>`;
+            tbody.innerHTML += row;
+        });
+    </script>
+</body>
+</html>

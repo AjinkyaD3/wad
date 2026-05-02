@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Validation</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .form-container { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 400px; }
+        h2 { text-align: center; color: #1c1e21; }
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
+        input, textarea { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        .error { color: #d93025; font-size: 0.8rem; margin-top: 0.2rem; display: none; }
+        button { width: 100%; padding: 0.8rem; background: #1877f2; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1rem; transition: background 0.3s; }
+        button:hover { background: #166fe5; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Register</h2>
+        <form id="regForm">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="firstName" placeholder="Min 6 alphabets">
+                <div id="fnError" class="error">First name must be at least 6 alphabets.</div>
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="lastName" placeholder="Required">
+                <div id="lnError" class="error">Last name cannot be empty.</div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" id="email" placeholder="name@domain.com">
+                <div id="emailError" class="error">Invalid email format.</div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Min 6 characters">
+                <div id="pwError" class="error">Password must be at least 6 characters.</div>
+            </div>
+            <div class="form-group">
+                <label>Mobile Number</label>
+                <input type="text" id="mobile" placeholder="10 digits only">
+                <div id="mobileError" class="error">Mobile number must be 10 digits.</div>
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                <textarea id="address" rows="3" placeholder="Required"></textarea>
+                <div id="addrError" class="error">Address cannot be empty.</div>
+            </div>
+            <button type="submit">Validate & Register</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

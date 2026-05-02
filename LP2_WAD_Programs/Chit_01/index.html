@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>ShopAdmin</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active">Dashboard</li>
+                    <li>Orders</li>
+                    <li>Products</li>
+                    <li>Customers</li>
+                    <li>Analytics</li>
+                    <li>Settings</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for reports, items...">
+                </div>
+                <div class="user-profile">
+                    <span>Admin User</span>
+                    <div class="avatar"></div>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Sales</h3>
+                    <p class="value">$24,500</p>
+                    <span class="trend up">+12.5%</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Orders</h3>
+                    <p class="value">1,240</p>
+                    <span class="trend up">+5.2%</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Users</h3>
+                    <p class="value">850</p>
+                    <span class="trend down">-2.1%</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Conversion Rate</h3>
+                    <p class="value">3.2%</p>
+                    <span class="trend up">+0.8%</span>
+                </div>
+            </section>
+
+            <section class="recent-orders">
+                <h2>Recent Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#12345</td>
+                            <td>John Doe</td>
+                            <td>Wireless Headphones</td>
+                            <td>$99.00</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>#12346</td>
+                            <td>Jane Smith</td>
+                            <td>Gaming Mouse</td>
+                            <td>$45.00</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>#12347</td>
+                            <td>Mike Ross</td>
+                            <td>Mechanical Keyboard</td>
+                            <td>$120.00</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

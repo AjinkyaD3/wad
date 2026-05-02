@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Implementation</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f8fafc; padding: 50px; }
+        .container { max-width: 600px; margin: auto; text-align: center; }
+        .btn { padding: 12px 24px; background: #6366f1; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; margin-bottom: 20px; }
+        #output { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left; }
+        .user-item { padding: 10px; border-bottom: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AJAX Data Fetch</h1>
+        <button class="btn" onclick="fetchData()">Load Users via AJAX</button>
+        <div id="output">Click the button to load data...</div>
+    </div>
+
+    <script>
+        function fetchData() {
+            const output = document.getElementById('output');
+            output.innerHTML = "Loading...";
+
+            // Using Fetch API (Modern AJAX)
+            fetch('https://jsonplaceholder.typicode.com/users')
+                .then(response => response.json())
+                .then(data => {
+                    let html = '<h3>User List</h3>';
+                    data.forEach(user => {
+                        html += `
+                            <div class="user-item">
+                                <strong>${user.name}</strong><br>
+                                <small>${user.email} | ${user.company.name}</small>
+                            </div>
+                        `;
+                    });
+                    output.innerHTML = html;
+                })
+                .catch(err => {
+                    output.innerHTML = "Error loading data.";
+                    console.error(err);
+                });
+        }
+    </script>
+</body>
+</html>

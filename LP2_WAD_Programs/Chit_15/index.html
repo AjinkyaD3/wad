@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Time-Table</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 40px; background: #f9fafb; }
+        h1 { text-align: center; color: #111827; }
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; background: white; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        th, td { border: 1px solid #e5e7eb; padding: 15px; text-align: center; }
+        th { background-color: #4f46e5; color: white; text-transform: uppercase; letter-spacing: 0.05em; }
+        tr:nth-child(even) { background-color: #f3f4f6; }
+        .break { background-color: #fee2e2 !important; font-weight: bold; color: #991b1b; }
+        .subject { font-weight: 500; color: #374151; }
+    </style>
+</head>
+<body>
+    <h1>Class Time-Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Time / Day</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>10:00 - 11:00</td>
+                <td class="subject">WAD (Lab)</td>
+                <td class="subject">CNS</td>
+                <td class="subject">DBMS</td>
+                <td class="subject">TOC</td>
+                <td class="subject">SPM</td>
+            </tr>
+            <tr>
+                <td>11:00 - 12:00</td>
+                <td class="subject">DBMS</td>
+                <td class="subject">WAD</td>
+                <td class="subject">TOC</td>
+                <td class="subject">CNS</td>
+                <td class="subject">SPM</td>
+            </tr>
+            <tr class="break">
+                <td>12:00 - 12:45</td>
+                <td colspan="5">LUNCH BREAK</td>
+            </tr>
+            <tr>
+                <td>12:45 - 01:45</td>
+                <td class="subject">TOC</td>
+                <td class="subject">DBMS</td>
+                <td class="subject">CNS</td>
+                <td class="subject">WAD</td>
+                <td class="subject">Elective</td>
+            </tr>
+            <tr>
+                <td>01:45 - 02:45</td>
+                <td class="subject">CNS</td>
+                <td class="subject">TOC</td>
+                <td class="subject">DBMS</td>
+                <td class="subject">WAD</td>
+                <td class="subject">Seminar</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

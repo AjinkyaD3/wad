@@ -1,0 +1,10 @@
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f4f7f6; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: #2c3e50; color: white; }
+.navbar .links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
+.hero { text-align: center; padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=1350&q=80'); background-size: cover; color: white; }
+.hero h1 { font-size: 3rem; margin-bottom: 20px; }
+.form-box { max-width: 400px; margin: 50px auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.form-box h2 { margin-bottom: 30px; color: #2c3e50; }
+input { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+.btn { display: inline-block; padding: 12px 30px; background: #3498db; color: white; text-decoration: none; border-radius: 5px; border: none; cursor: pointer; transition: background 0.3s; }
+.btn:hover { background: #2980b9; }
