@@ -1,14 +1,53 @@
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+
+// Validation patterns
+const patterns = {
+    cap: /[A-Z]/,
+    small: /[a-z]/,
+    num: /[0-9]/,
+    spec: /[!@#$%^&*]/
+};
+
+function updateValidation(input, type) {
+    const val = input.value;
+    if (type === 'user') {
+        toggleStatus('u-cap', patterns.cap.test(val));
+        toggleStatus('u-small', patterns.small.test(val));
+        toggleStatus('u-num', patterns.num.test(val));
+        toggleStatus('u-spec', patterns.spec.test(val));
+        toggleStatus('u-len', val.length >= 8);
+    } else {
+        toggleStatus('p-cap', patterns.cap.test(val));
+        toggleStatus('p-small', patterns.small.test(val));
+        toggleStatus('p-spec', patterns.spec.test(val));
+        toggleStatus('p-len', val.length >= 8);
+    }
+}
+
+function toggleStatus(id, isValid) {
+    const el = document.getElementById(id);
+    if (isValid) {
+        el.classList.add('valid');
+        el.classList.remove('invalid');
+    } else {
+        el.classList.add('invalid');
+        el.classList.remove('valid');
+    }
+}
+
+username.addEventListener('input', () => updateValidation(username, 'user'));
+password.addEventListener('input', () => updateValidation(password, 'pass'));
+
 document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    const user = document.getElementById('username').value;
-    const pass = document.getElementById('password').value;
+    const user = username.value;
+    const pass = password.value;
     
-    // Username Regex: 1 Block, 1 Small, 1 Special, 1 Num, min 8 chars
+    // Final check for submission (8+ chars and all regex)
     const userRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
-    
-    // Password Regex: 1 Block, 1 Special, min 8 chars
-    const passRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
+    const passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])(?=.{8,})/;
     
     let isValid = true;
     
@@ -30,3 +69,4 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         alert("Validation Successful! Logging in...");
     }
 });
+
