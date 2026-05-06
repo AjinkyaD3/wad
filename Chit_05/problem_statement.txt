@@ -1,0 +1,7 @@
+5. JavaScript + AJAX + Local Storage
+
+Write a JavaScript Program to:
+
+a. Get user registration data
+b. Push data to array / local storage using AJAX POST method
+c. Display data list in a new page

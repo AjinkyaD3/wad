@@ -1,0 +1,6 @@
+12. Hyperlinks in HTML
+
+Write a HTML program for demonstrating Hyperlinks.
+
+a. Navigation from one page to another
+b. Navigation within the page

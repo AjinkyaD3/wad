@@ -1,0 +1,7 @@
+3. Design Static Web Pages
+
+Design the following static web pages required for a college / ecommerce / social media website:
+
+a. Login Page
+b. Home Page
+c. Registration Page
