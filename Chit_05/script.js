@@ -7,12 +7,10 @@ document.getElementById('ajaxForm').addEventListener('submit', function(e) {
         city: document.getElementById('city').value
     };
 
-    // 1. Save to Local Storage
     let users = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
     users.push(userData);
     localStorage.setItem('registeredUsers', JSON.stringify(users));
 
-    // 2. AJAX POST using XMLHttpRequest (Old Method)
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://jsonplaceholder.typicode.com/posts', true);
     xhr.setRequestHeader('Content-Type', 'application/json');

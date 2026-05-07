@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Styles Demo</title>
 
-    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Internal CSS -->
     <style>
         body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #f0f4ff, #e8ecf8); padding: 40px; }
         h1 { text-align: center; color: #1e293b; margin-bottom: 30px; }
@@ -28,19 +26,16 @@
     <div style="max-width: 800px; margin: auto;">
         <h1>CSS Styling Demonstration</h1>
 
-        <!-- 1. Inline CSS -->
         <div style="background: linear-gradient(135deg, #fff3e0, #ffe0b2); padding: 25px; border: 2px solid #ff9800; border-radius: 12px; margin-bottom: 20px; transition: transform 0.3s;">
             <h2 style="color: #e65100;">1. Inline CSS</h2>
             <p>This box uses the <code>style</code> attribute directly on HTML elements.</p>
         </div>
 
-        <!-- 2. Internal CSS -->
         <div class="internal-box">
             <h2>2. Internal CSS</h2>
             <p>This box uses a <code>&lt;style&gt;</code> block inside the HTML <code>&lt;head&gt;</code>.</p>
         </div>
 
-        <!-- 3. External CSS -->
         <div class="external-box">
             <h2>3. External CSS</h2>
             <p>This box uses a separate <code>.css</code> file linked in the head.</p>

@@ -20,13 +20,10 @@ body {
   color: var(--text-main);
 }
 
-/* Layout */
 .dashboard-container {
   display: flex;
   min-height: 100vh;
 }
-
-/* Sidebar */
 
 .sidebar {
   width: 250px;
@@ -60,15 +57,11 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Main */
-
 .main-content {
   flex: 1;
   padding: 2rem;
   overflow-x: hidden;
 }
-
-/* Header */
 
 header {
   display: flex;
@@ -109,8 +102,6 @@ header {
   border-radius: 50%;
   background: linear-gradient(135deg, #818cf8, #c084fc);
 }
-
-/* Stats */
 
 .stats-grid {
   display: grid;
@@ -167,8 +158,6 @@ header {
 .trend.down {
   color: #ef4444;
 }
-
-/* Orders */
 
 .recent-orders {
   background: var(--white);
@@ -227,8 +216,6 @@ tr:hover td {
   color: #92400e;
 }
 
-/* Mobile Menu */
-
 .menu-toggle {
   display: none;
   position: fixed;
@@ -244,8 +231,6 @@ tr:hover td {
   cursor: pointer;
 }
 
-/* Overlay */
-
 .overlay {
   position: fixed;
   inset: 0;
@@ -260,8 +245,6 @@ tr:hover td {
   opacity: 1;
   visibility: visible;
 }
-
-/* Responsive */
 
 @media (max-width: 992px) {
 
