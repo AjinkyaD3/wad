@@ -1,3 +1,0 @@
-14. JavaScript REGISTRATION FORM Validation
-
-Write a JavaScript program for validating REGISTRATION FORM.

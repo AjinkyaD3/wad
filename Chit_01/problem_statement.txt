@@ -1,3 +1,0 @@
-1. Create a Responsive Web Page
-
-Create a responsive web page which shows the ecommerce / college / exam admin dashboard using HTML & CSS.

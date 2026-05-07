@@ -1,3 +1,0 @@
-6. Node.js Static Website
-
-Create a Node.JS Application which serves a static website.

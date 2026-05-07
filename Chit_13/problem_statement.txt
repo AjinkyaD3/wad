@@ -1,3 +1,0 @@
-13. JavaScript USER LOGIN Validation
-
-Write a JavaScript program to validate USER LOGIN page.

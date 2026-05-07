@@ -1,3 +1,0 @@
-8. AJAX Concept
-
-Write a JavaScript Program to implement AJAX concept.

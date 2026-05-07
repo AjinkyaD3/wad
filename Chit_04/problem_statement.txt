@@ -1,9 +1,0 @@
-4. CSS Style Sheets
-
-Develop and demonstrate the usage of:
-
-a. Inline Style Sheet
-b. Internal Style Sheet
-c. External Style Sheet
-
-using CSS.

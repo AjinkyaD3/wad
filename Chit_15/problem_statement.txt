@@ -1,3 +1,0 @@
-15. Time-Table Using Tables
-
-Write a HTML program for time-table using tables.
