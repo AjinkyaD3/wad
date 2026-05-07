@@ -1,10 +1,25 @@
-body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f4f7f6; }
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: #2c3e50; color: white; }
-.navbar .links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
-.hero { text-align: center; padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=1350&q=80'); background-size: cover; color: white; }
-.hero h1 { font-size: 3rem; margin-bottom: 20px; }
-.form-box { max-width: 400px; margin: 50px auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-.form-box h2 { margin-bottom: 30px; color: #2c3e50; }
-input { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
-.btn { display: inline-block; padding: 12px 30px; background: #3498db; color: white; text-decoration: none; border-radius: 5px; border: none; cursor: pointer; transition: background 0.3s; }
-.btn:hover { background: #2980b9; }
+body { 
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f4ff; 
+}
+
+.navbar { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 1rem 5%; 
+    background: linear-gradient(135deg, #1e1b4b, #4338ca); 
+    color: white; 
+}
+
+.navbar .links a { color: #c4b5fd; text-decoration: none; margin-left: 20px; font-weight: 500; transition: color 0.3s; }
+.navbar .links a:hover { color: white; }
+.hero { text-align: center; padding: 100px 20px; background: linear-gradient(135deg, #312e81, #6366f1, #8b5cf6); color: white; }
+.hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+.form-box { max-width: 400px; margin: 50px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(99,102,241,0.12); }
+.form-box h2 { margin-bottom: 30px; color: #1e293b; }
+input { width: 100%; padding: 12px; margin-bottom: 20px; border: 2px solid #e0e7ff; border-radius: 8px; box-sizing: border-box; transition: border 0.3s; }
+input:focus { border-color: #6366f1; outline: none; }
+.btn { display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; text-decoration: none; border-radius: 8px; border: none; cursor: pointer; transition: transform 0.2s; }
+.btn:hover { transform: scale(1.03); }

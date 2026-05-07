@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Static Registration Form</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #f0f4f8; padding: 50px; }
-        .form-container { background: white; padding: 30px; border-radius: 10px; max-width: 500px; margin: auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h1 { text-align: center; color: #333; margin-bottom: 20px; }
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #f0f4ff, #e8ecf8); padding: 50px; }
+        .form-container { background: white; padding: 30px; border-radius: 12px; max-width: 500px; margin: auto; box-shadow: 0 10px 30px rgba(99,102,241,0.1); }
+        h1 { text-align: center; color: #1e293b; margin-bottom: 20px; }
         .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: 600; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; color: #374151; }
         input[type="text"], input[type="email"], input[type="password"], select, textarea {
-            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;
+            width: 100%; padding: 10px; border: 2px solid #e0e7ff; border-radius: 8px; box-sizing: border-box; transition: border 0.3s;
         }
-        button { width: 100%; padding: 10px; background: #4f46e5; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+        input:focus, select:focus, textarea:focus { border-color: #6366f1; outline: none; }
+        button { width: 100%; padding: 12px; background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: transform 0.2s; }
+        button:hover { transform: scale(1.02); }
     </style>
 </head>
 <body>

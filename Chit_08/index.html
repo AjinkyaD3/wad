@@ -3,77 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJAX Implementation (Old & Modern)</title>
+    <title>AJAX Implementation</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #f8fafc; padding: 50px; }
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #f0f4ff, #e8ecf8); padding: 50px; }
         .container { max-width: 600px; margin: auto; text-align: center; }
-        .btn-group { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
-        .btn { padding: 12px 24px; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
-        .btn-modern { background: #6366f1; }
-        .btn-old { background: #64748b; }
-        #output { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left; min-height: 100px; }
-        .user-item { padding: 10px; border-bottom: 1px solid #eee; }
-        .method-label { font-size: 0.8rem; background: #e2e8f0; padding: 2px 8px; border-radius: 4px; float: right; }
+        h1 { color: #1e293b; margin-bottom: 10px; }
+        p { color: #64748b; margin-bottom: 20px; }
+        button { padding: 14px 30px; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 1rem; background: linear-gradient(135deg, #6366f1, #8b5cf6); transition: transform 0.2s; }
+        button:hover { transform: scale(1.03); }
+        #output { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 8px 25px rgba(99,102,241,0.1); text-align: left; min-height: 100px; margin-top: 20px; }
+        .user-item { padding: 12px; border-bottom: 1px solid #f1f5f9; }
+        .user-item:last-child { border: none; }
+        .method-tag { font-size: 0.75rem; background: #e0e7ff; color: #4338ca; padding: 3px 10px; border-radius: 1rem; float: right; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>AJAX Data Fetch</h1>
-        <div class="btn-group">
-            <button class="btn btn-modern" onclick="fetchDataModern()">Fetch API (Modern)</button>
-            <button class="btn btn-old" onclick="fetchDataOld()">XMLHttpRequest (Old)</button>
-        </div>
-        <div id="output">Click a button to load data...</div>
+        <p>Fetches user data from API using XMLHttpRequest</p>
+        <button onclick="fetchWithXHR()">Load Users (XHR)</button>
+        <div id="output">Click the button to load data...</div>
     </div>
 
     <script>
         const output = document.getElementById('output');
 
-        // 1. Modern AJAX: Fetch API
-        function fetchDataModern() {
-            output.innerHTML = "Loading via Fetch...";
-            
-            fetch('https://jsonplaceholder.typicode.com/users')
-                .then(response => response.json())
-                .then(data => {
-                    renderData(data, 'Modern (Fetch)');
-                })
-                .catch(err => {
-                    output.innerHTML = "Error loading data via Fetch.";
-                    console.error(err);
-                });
-        }
+        // ===== XMLHttpRequest (Old AJAX Method) =====
+        function fetchWithXHR() {
+            output.innerHTML = "Loading via XMLHttpRequest...";
 
-        // 2. Old AJAX: XMLHttpRequest (XHR)
-        function fetchDataOld() {
-            output.innerHTML = "Loading via XHR...";
-            
             const xhr = new XMLHttpRequest();
             xhr.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
-            
+
             xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4) { // Request finished
+                if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
                         const data = JSON.parse(xhr.responseText);
-                        renderData(data, 'Old (XHR)');
+                        renderData(data, 'XMLHttpRequest');
                     } else {
-                        output.innerHTML = "Error loading data via XHR.";
+                        output.innerHTML = "Error: " + xhr.status;
                     }
                 }
             };
-            
+
             xhr.send();
         }
 
+        /* ===== Fetch API (Modern AJAX - Commented) =====
+        function fetchWithFetch() {
+            output.innerHTML = "Loading via Fetch API...";
+
+            fetch('https://jsonplaceholder.typicode.com/users')
+                .then(response => response.json())
+                .then(data => renderData(data, 'Fetch API'))
+                .catch(err => { output.innerHTML = "Fetch Error: " + err; });
+        }
+        */
+
         function renderData(data, method) {
-            let html = `<h3>User List <span class="method-label">${method}</span></h3>`;
+            let html = `<h3>User List <span class="method-tag">${method}</span></h3>`;
             data.forEach(user => {
-                html += `
-                    <div class="user-item">
-                        <strong>${user.name}</strong><br>
-                        <small>${user.email} | ${user.company.name}</small>
-                    </div>
-                `;
+                html += `<div class="user-item">
+                    <strong>${user.name}</strong><br>
+                    <small>${user.email} | ${user.company.name}</small>
+                </div>`;
             });
             output.innerHTML = html;
         }

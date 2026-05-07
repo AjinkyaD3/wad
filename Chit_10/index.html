@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprehensive Registration Form</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #f3f4f6; padding: 20px; }
-        .form-card { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #f0f4ff, #e8ecf8); padding: 20px; }
+        .form-card { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(99,102,241,0.1); }
         .row { display: flex; gap: 20px; margin-bottom: 15px; }
         .field { flex: 1; display: flex; flex-direction: column; }
         label { font-weight: 600; margin-bottom: 5px; font-size: 0.9rem; color: #374151; }
-        input, select, textarea { padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; }
+        input, select, textarea { padding: 10px; border: 2px solid #e0e7ff; border-radius: 8px; transition: border 0.3s; }
+        input:focus, select:focus, textarea:focus { border-color: #6366f1; outline: none; }
         .radio-group, .check-group { display: flex; gap: 15px; margin-top: 5px; }
         .radio-group label, .check-group label { font-weight: 400; }
-        button { background: #059669; color: white; border: none; padding: 12px; border-radius: 6px; width: 100%; cursor: pointer; font-size: 1rem; margin-top: 20px; }
+        button { background: linear-gradient(135deg, #059669, #34d399); color: white; border: none; padding: 12px; border-radius: 8px; width: 100%; cursor: pointer; font-size: 1rem; margin-top: 20px; transition: transform 0.2s; }
+        button:hover { transform: scale(1.02); }
     </style>
 </head>
 <body>

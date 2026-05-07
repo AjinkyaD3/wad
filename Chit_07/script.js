@@ -1,72 +1,51 @@
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 
-// Validation patterns
-const patterns = {
-    cap: /[A-Z]/,
-    small: /[a-z]/,
-    num: /[0-9]/,
-    spec: /[!@#$%^&*]/
-};
-
-function updateValidation(input, type) {
-    const val = input.value;
-    if (type === 'user') {
-        toggleStatus('u-cap', patterns.cap.test(val));
-        toggleStatus('u-small', patterns.small.test(val));
-        toggleStatus('u-num', patterns.num.test(val));
-        toggleStatus('u-spec', patterns.spec.test(val));
-        toggleStatus('u-len', val.length >= 8);
-    } else {
-        toggleStatus('p-cap', patterns.cap.test(val));
-        toggleStatus('p-small', patterns.small.test(val));
-        toggleStatus('p-spec', patterns.spec.test(val));
-        toggleStatus('p-len', val.length >= 8);
-    }
-}
-
-function toggleStatus(id, isValid) {
+// Simple helper to toggle valid/invalid class
+function check(id, ok) {
     const el = document.getElementById(id);
-    if (isValid) {
-        el.classList.add('valid');
-        el.classList.remove('invalid');
-    } else {
-        el.classList.add('invalid');
-        el.classList.remove('valid');
-    }
+    el.className = ok ? 'valid' : 'invalid';
 }
 
-username.addEventListener('input', () => updateValidation(username, 'user'));
-password.addEventListener('input', () => updateValidation(password, 'pass'));
+// Live validation on typing
+username.addEventListener('input', function() {
+    const v = this.value;
+    check('u-cap', /[A-Z]/.test(v));
+    check('u-small', /[a-z]/.test(v));
+    check('u-num', /[0-9]/.test(v));
+    check('u-spec', /[!@#$%^&*]/.test(v));
+    check('u-len', v.length >= 8);
+});
 
+password.addEventListener('input', function() {
+    const v = this.value;
+    check('p-cap', /[A-Z]/.test(v));
+    check('p-small', /[a-z]/.test(v));
+    check('p-spec', /[!@#$%^&*]/.test(v));
+    check('p-len', v.length >= 8);
+});
+
+// Form submit validation using simple individual regex checks
 document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    const user = username.value;
-    const pass = password.value;
-    
-    // Final check for submission (8+ chars and all regex)
-    const userRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
-    const passRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])(?=.{8,})/;
-    
-    let isValid = true;
-    
-    if (!userRegex.test(user)) {
+    const u = username.value, p = password.value;
+    let valid = true;
+
+    // Username: uppercase + lowercase + number + special + 8 chars
+    if (!/[A-Z]/.test(u) || !/[a-z]/.test(u) || !/[0-9]/.test(u) || !/[!@#$%^&*]/.test(u) || u.length < 8) {
         document.getElementById('userError').style.display = 'block';
-        isValid = false;
+        valid = false;
     } else {
         document.getElementById('userError').style.display = 'none';
     }
-    
-    if (!passRegex.test(pass)) {
+
+    // Password: uppercase + special + 8 chars
+    if (!/[A-Z]/.test(p) || !/[!@#$%^&*]/.test(p) || p.length < 8) {
         document.getElementById('passError').style.display = 'block';
-        isValid = false;
+        valid = false;
     } else {
         document.getElementById('passError').style.display = 'none';
     }
-    
-    if (isValid) {
-        alert("Validation Successful! Logging in...");
-    }
-});
 
+    if (valid) alert("Login Successful!");
+});

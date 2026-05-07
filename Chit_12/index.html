@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <title>Hyperlinks Demo - Page 1</title>
     <style>
-        body { font-family: sans-serif; padding: 40px; line-height: 1.6; }
-        section { height: 600px; padding: 20px; border: 1px solid #ddd; margin: 20px 0; }
-        nav { background: #eee; padding: 10px; position: sticky; top: 0; }
+        body { font-family: 'Segoe UI', sans-serif; padding: 40px; line-height: 1.6; background: #f0f4ff; }
+        h1 { color: #1e293b; }
+        section { min-height: 500px; padding: 30px; border-radius: 12px; margin: 20px 0; transition: transform 0.2s; }
+        section:hover { transform: translateY(-2px); }
+        nav { background: linear-gradient(135deg, #6366f1, #8b5cf6); padding: 15px 20px; position: sticky; top: 0; border-radius: 10px; z-index: 10; }
+        nav a { color: white; margin: 0 8px; text-decoration: none; font-weight: 500; }
+        nav a:hover { text-decoration: underline; }
+        nav strong { color: #e0e7ff; }
     </style>
 </head>
 <body>
@@ -21,17 +26,17 @@
         <a href="page2.html">Go to Page 2 →</a>
     </nav>
 
-    <section id="section1" style="background: #fff5f5;">
+    <section id="section1" style="background: linear-gradient(135deg, #fef2f2, #fecaca);">
         <h2>Section 1</h2>
         <p>This is the first section. You can jump here using an anchor link.</p>
     </section>
 
-    <section id="section2" style="background: #f5fff5;">
+    <section id="section2" style="background: linear-gradient(135deg, #f0fdf4, #bbf7d0);">
         <h2>Section 2</h2>
         <p>Scroll down or use the nav to reach me.</p>
     </section>
 
-    <section id="section3" style="background: #f5f5ff;">
+    <section id="section3" style="background: linear-gradient(135deg, #eef2ff, #c7d2fe);">
         <h2>Section 3</h2>
         <p>Bottom of the page!</p>
         <a href="#">Back to Top ↑</a>

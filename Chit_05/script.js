@@ -7,28 +7,40 @@ document.getElementById('ajaxForm').addEventListener('submit', function(e) {
         city: document.getElementById('city').value
     };
 
-    // 1. Push to Local Storage
+    // 1. Save to Local Storage
     let users = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
     users.push(userData);
     localStorage.setItem('registeredUsers', JSON.stringify(users));
 
-    // 2. Push with AJAX POST (Mocking with Fetch to a placeholder)
-    // Note: In a real lab, you might point to a local PHP/Node script.
+    // 2. AJAX POST using XMLHttpRequest (Old Method)
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://jsonplaceholder.typicode.com/posts', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 201 || xhr.status === 200) {
+                console.log('XHR Response:', JSON.parse(xhr.responseText));
+                alert('Data saved successfully (LocalStorage + AJAX POST)!');
+            } else {
+                alert('Saved to LocalStorage. Server returned: ' + xhr.status);
+            }
+            window.location.href = 'list.html';
+        }
+    };
+    xhr.send(JSON.stringify(userData));
+
+    /* --- Modern Alternative: Fetch API (Commented) ---
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         body: JSON.stringify(userData),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
+        headers: { 'Content-type': 'application/json' }
     })
-    .then(response => response.json())
-    .then(json => {
-        console.log('AJAX Response:', json);
-        alert('Data saved successfully (Local Storage + Mock AJAX POST)!');
+    .then(res => res.json())
+    .then(data => {
+        console.log('Fetch Response:', data);
+        alert('Data saved!');
         window.location.href = 'list.html';
     })
-    .catch(err => {
-        console.error('AJAX Error:', err);
-        alert('Data saved to LocalStorage, but AJAX failed (expected without server).');
-    });
+    .catch(err => alert('Saved to LocalStorage only.'));
+    */
 });

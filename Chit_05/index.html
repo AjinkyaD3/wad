@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration - AJAX/LocalStorage</title>
     <style>
-        body { font-family: system-ui; padding: 40px; background: #f0f4f8; }
-        .card { background: white; padding: 30px; border-radius: 10px; max-width: 500px; margin: auto; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
-        button { background: #6366f1; color: white; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer; width: 100%; font-size: 1rem; }
+        body { font-family: system-ui; padding: 40px; background: linear-gradient(135deg, #f0f4ff, #e8ecf8); }
+        .card { background: white; padding: 30px; border-radius: 12px; max-width: 500px; margin: auto; box-shadow: 0 8px 25px rgba(99,102,241,0.1); }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 2px solid #e0e7ff; border-radius: 8px; box-sizing: border-box; transition: border 0.3s; }
+        input:focus { border-color: #6366f1; outline: none; }
+        button { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; width: 100%; font-size: 1rem; transition: transform 0.2s; }
+        button:hover { transform: scale(1.02); }
         .nav { text-align: center; margin-top: 20px; }
-        a { color: #6366f1; text-decoration: none; }
+        a { color: #6366f1; text-decoration: none; font-weight: 600; }
     </style>
 </head>
 <body>
