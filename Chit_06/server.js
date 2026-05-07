@@ -1,5 +1,4 @@
 /*
-// Standard Node.js HTTP Module Server (Commented Out)
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
